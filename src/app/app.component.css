@@ -1,0 +1,28 @@
+body{
+    background-color: #e9e6e3;
+}
+.mainContent{
+    margin-top: 2%;
+}
+.programsContainer{
+    margin-top: 5px;
+}
+.imgHeight{
+    height: 15em;
+}
+.itmData{
+    color: #7fa1eb;
+}
+.filters{
+    background-color: #ffffff;
+}
+.txtCenter{
+    text-align: center;
+}
+.filterBtn{
+    padding: 5px 10px 5px 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(154, 243, 154);
+    margin: 0px 25px 15px 15px;
+}
