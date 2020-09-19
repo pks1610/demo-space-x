@@ -7,20 +7,22 @@
   <div class="row mainContent">
     <div class="col-md-3 col-sm-12">
       <div class="filters">
-        <h4>Filters</h4>
+        <h4 class="headTxt">Filters</h4>
         <div class="txtCenter">
           <h6>Launch Year</h6><hr/>
-          <button class="filterBtn" *ngFor="let btn of yearFilter" (click)="filterByYear(btn)">{{btn}}</button>
+          <span *ngFor="let btn of yearFilter">
+            <button [ngClass]="selectedBtn == btn ? 'selectedBtn' : 'filterBtn'" (click)="filterByYear(btn)">{{btn}}</button>
+          </span>
         </div><br>
         <div class="txtCenter">
           <h6>Successful Launch</h6><hr/>
-          <button class="filterBtn" (click)="filterByLaunch(true)">True</button>
-          <button class="filterBtn" (click)="filterByLaunch(false)">false</button>
+          <button [ngClass]="selectedBtn == 'trueLaunch' ? 'selectedBtn' : 'filterBtn'" (click)="filterByLaunch(true)">True</button>
+          <button [ngClass]="selectedBtn == 'falseLaunch' ? 'selectedBtn' : 'filterBtn'" (click)="filterByLaunch(false)">false</button>
         </div><br>
         <div class="txtCenter">
           <h6>Successful Landing</h6><hr/>
-          <button class="filterBtn" (click)="filterByLanding(true)">True</button>
-          <button class="filterBtn" (click)="filterByLanding(false)">false</button>
+          <button [ngClass]="selectedBtn == true ? 'selectedBtn' : 'filterBtn'" (click)="filterByLanding(true)">True</button>
+          <button [ngClass]="selectedBtn == false ? 'selectedBtn' : 'filterBtn'" (click)="filterByLanding(false)">false</button>
         </div>
       </div>
     </div>
@@ -40,7 +42,7 @@
               </ul>
               <h6>Launch Year: <span class="itmData">{{ item.launch_year }}</span></h6>
               <h6>Successful Launch: <span class="itmData">{{ item.launch_success }}</span></h6>
-              <h6>Successful Landing: <span class="itmData">{{ item.rocket.first_stage.cores[0].land_success || "null" }}</span></h6>
+              <h6>Successful Landing: <span class="itmData">{{ item.rocket.first_stage.cores[0].land_success || "false" }}</span></h6>
             </div>
           </div>
         </div>

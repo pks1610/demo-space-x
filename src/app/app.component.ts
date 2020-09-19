@@ -10,7 +10,8 @@ export class AppComponent {
   title = 'SpaceX Launch Programs';
   allPrograms;
   demoImg = "../assets/img/demo.jpg";
-  yearFilter = [2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020]
+  yearFilter = [2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020];
+  selectedBtn;
 
   constructor(private dataServ: GetDataService){ }
 
@@ -25,18 +26,25 @@ export class AppComponent {
   }
 
   filterByYear(year){
+    this.selectedBtn = year;
     this.dataServ.getDataByYear(year).subscribe(data => {
       this.allPrograms = data;
     })
   }
 
   filterByLaunch(istrue){
+    if(istrue == true){
+      this.selectedBtn = 'trueLaunch';
+    }else{
+      this.selectedBtn= 'falseLaunch';
+    }
     this.dataServ.getDataByLaunch(istrue).subscribe(data => {
       this.allPrograms = data;
     })
   }
 
   filterByLanding(isTrue){
+    this.selectedBtn = isTrue;
     this.dataServ.getDataByLanding(isTrue).subscribe(data => {
       this.allPrograms = data;
     })

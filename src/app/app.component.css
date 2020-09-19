@@ -1,5 +1,6 @@
 body{
     background-color: #e9e6e3;
+    padding: 2%;
 }
 .mainContent{
     margin-top: 2%;
@@ -16,6 +17,9 @@ body{
 .filters{
     background-color: #ffffff;
 }
+.headTxt{
+    padding-left: 10px;
+}
 .txtCenter{
     text-align: center;
 }
@@ -23,7 +27,14 @@ body{
     padding: 5px 10px 5px 10px;
     border: none;
     border-radius: 10px;
-    background-color: rgb(154, 243, 154);
+    background-color: #92dd92;
+    margin: 0px 25px 15px 15px;
+}
+.selectedBtn{
+    padding: 5px 10px 5px 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #27fa27;
     margin: 0px 25px 15px 15px;
 }
 .boldText{
